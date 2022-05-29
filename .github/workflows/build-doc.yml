@@ -47,5 +47,7 @@ jobs:
       - run: npm install -g gatsby-cli
         working-directory: doc
 
-      - run: gatsby build --prefix-paths
+      - run: |
+          gatsby build --prefix-paths
+          gh-pages -d public
         working-directory: doc
