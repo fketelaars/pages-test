@@ -34,4 +34,17 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          ls -alR
+
+      - name: Install nodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12.21.0
+
+      - run: cd doc
+
+      - name: Install node packages
+        run: npm install
+
+      - run: npm install -g gatsby-cli
+
+      - run: gatsby build --prefix-paths
